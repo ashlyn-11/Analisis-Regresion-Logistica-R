@@ -1,0 +1,40 @@
+```{r}
+# =========================================================
+# TAREA 1: ANÁLISIS DE REGRESIÓN (UNIVARIADO Y MULTIVARIADO)
+# =========================================================
+
+# Cargamos las librerías para que salgan las tablas
+library(gtsummary)
+library(tidyverse)
+
+# Jalamos los datos y limpiamos un poco para que no salgan errores
+df_limpio <- trial %>%
+  select(response, age, stage, grade) %>%
+  drop_na(response)
+
+# --- PARTE 1: REGRESIÓN UNIVARIADA ---
+# Aquí analizamos cada variable solita para ver su impacto individual
+tabla_uni <- tbl_uvregression(
+    df_limpio,
+    method = glm,
+    y = response,
+    method.args = list(family = binomial),
+    exponentiate = TRUE
+  ) %>% 
+  bold_labels() %>% 
+  modify_caption("**Tabla 1. Análisis de Regresión Univariado (Efecto Individual)**")
+
+# --- PARTE 2: REGRESIÓN MULTIVARIADA ---
+# Ahora ajustamos el modelo con todas las variables juntas (el modelo real)
+modelo_multi <- glm(response ~ age + stage + grade, data = df_limpio, family = binomial)
+
+tabla_multi <- tbl_regression(modelo_multi, exponentiate = TRUE) %>% 
+  bold_p(t = 0.05) %>% # Resaltamos los que sí son significativos
+  bold_labels() %>% 
+  modify_caption("**Tabla 2. Análisis de Regresión Multivariado (Modelo Ajustado)**")
+
+# --- RESULTADOS FINALES ---
+# Ejecutamos ambos para que salgan en el HTML uno después del otro
+tabla_uni
+tabla_multi
+```
