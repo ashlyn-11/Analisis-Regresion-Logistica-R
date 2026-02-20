@@ -1,0 +1,45 @@
+```{r}
+# =========================================================
+# LRPD3 - Implementación de Regresión Logística y Visualización de Resultados en R
+# =========================================================
+
+# Carga de librerías para análisis y visualización
+library(gtsummary)
+library(tidyverse)
+library(ggplot2)
+
+# Selección de variables y omisión de casos incompletos (listwise deletion)
+df_limpio <- trial %>%
+  select(response, age, stage, grade) %>%
+  drop_na(response)
+
+# --- MODELO ESTADÍSTICO ---
+# Ajuste de regresión logística multivariada (familia binomial)
+modelo_final <- glm(response ~ age + stage + grade, data = df_limpio, family = binomial)
+
+# Generación de tabla con Odds Ratio (OR) y p-valores ajustados
+tabla_final <- tbl_regression(modelo_final, exponentiate = TRUE) %>% 
+  bold_p(t = 0.05) %>% 
+  bold_labels() %>% 
+  italicize_levels() %>%
+  modify_caption("**Tabla Final: Modelo Multivariado Ajustado (LRPD)**")
+
+# Visualización de tabla resumida
+tabla_final
+
+# --- ANÁLISIS GRÁFICO ---
+# Creación de gráfico de barras apiladas al 100% para comparar proporciones
+grafico_final <- df_limpio %>%
+  ggplot(aes(x = stage, fill = factor(response))) +
+  geom_bar(position = "fill") +
+  labs(
+    title = "Distribución de Respuesta según Estadio Clínico",
+    x = "Estadio (Stage)",
+    y = "Proporción",
+    fill = "Respuesta (1=Sí)"
+  ) +
+  theme_minimal()
+
+# Renderización del gráfico
+grafico_final
+```
