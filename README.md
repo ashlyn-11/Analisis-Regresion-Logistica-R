@@ -1,17 +1,20 @@
-# Proyecto de Análisis Bioestadístico - PC1 y LRPD3
+# Proyecto de Análisis Bioestadístico - LRPD2 y LRPD3
 
-Este repositorio contiene los archivos correspondientes a la **Actividad 3** del curso, enfocada en el análisis de factores asociados a la respuesta al tratamiento mediante modelos de regresión logística.
+Este repositorio contiene los proyectos desarrollados para las actividades **LRPD2 Y LRPD3** del curso, enfocados en el análisis de factores asociados a la respuesta al tratamiento mediante modelos de regresión logística en R.
 
 ## Contenido del Repositorio
-* **PC1_AnalisisRegresion**: Incluye el análisis de regresión univariado y multivariado solicitado para la Evaluación Continua.
-* **LRPD3_ProyectoFinal**: Implementación del modelo estadístico adecuado (multivariado) y visualización de datos mediante gráficos de proporciones.
+
+* **LRPD2_Análisis de Datos y Pruebas de Hipótesis mediante Regresión Logística en R**: Incluye la implementación de regresión logística univariada y multivariada, pruebas de hipótesis y evaluación de la adecuación del modelo.
+* **LRPD3_Implementación de Regresión Logística y Visualización de Resultados en R**: Contiene la implementación completa del modelo estadístico, generación de tablas y gráficos, e interpretación de resultados.
 
 ## Metodología
+
 * **Software**: RStudio.
 * **Reporte**: Documentos dinámicos generados en Quarto (.qmd).
 * **Paquetes principales**: `gtsummary` para tablas de regresión y `ggplot2` para análisis visual.
 
 ## Autores
+
 * **Integrante 1**: [Huayta Quispe Nadia]
 * **Integrante 2**: [Huaraca Santos Ashlyn]
 * **Integrante 3**: [Sanchez Campos Luis Danilo]
