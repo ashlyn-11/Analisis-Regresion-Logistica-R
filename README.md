@@ -1,17 +1,17 @@
 # Proyecto de Análisis Bioestadístico - LRPD2 y LRPD3
 
-Este repositorio contiene los proyectos desarrollados para las actividades **LRPD2 Y LRPD3** del curso, enfocados en el análisis de factores asociados a la respuesta al tratamiento mediante modelos de regresión logística en R.
+Este repositorio contiene los trabajos desarrollados para las actividades LRPD2 y LRPD3, enfocados en el análisis estadístico inferencial y la contrastación de hipótesis mediante métodos paramétricos y no paramétricos aplicados a una base de datos.
 
 ## Contenido del Repositorio
 
-* **LRPD2_Análisis de Datos y Pruebas de Hipótesis mediante Regresión Logística en R**: Incluye la implementación de regresión logística univariada y multivariada, pruebas de hipótesis y evaluación de la adecuación del modelo.
-* **LRPD3_Implementación de Regresión Logística y Visualización de Resultados en R**: Contiene la implementación completa del modelo estadístico, generación de tablas y gráficos, e interpretación de resultados.
+* **LRPD2_Análisis de Prueba de Hipótesis de Investigación**: Se desarrolla la formulación y contrastación de hipótesis estadísticas utilizando métodos apropiados según la naturaleza de los datos, incluyendo interpretación de resultados y conclusiones inferenciales.
+* **LRPD3_Informe Estadístico con Métodos Paramétricos y No Paramétricos**: Se presenta un análisis completo con base de datos, aplicando pruebas paramétricas y no paramétricas para la contrastación de hipótesis. Incluye procedimiento metodológico, resultados, tablas, gráficos e interpretación estadística.
 
 ## Metodología
 
 * **Software**: RStudio.
 * **Reporte**: Documentos dinámicos generados en Quarto (.qmd).
-* **Paquetes principales**: `gtsummary` para tablas de regresión y `ggplot2` para análisis visual.
+* **Análisis**: Estadística inferencial, pruebas paramétricas y no paramétricas
 
 ## Autores
 
